@@ -1,0 +1,130 @@
+---
+title: "Class 05: Data Visualization with GGPLOT"
+author: "Ethan Ashley (PID: A15939817)"
+format: pdf
+---
+
+Today we are playing with plotting and graphics in R.
+
+There are lots of ways to make cool figures in R. 
+There is "base" R graphics (`plot()`, `hist()`, `boxplot()`, etc.)
+
+There are also add-on packages, like **ggplot**.
+
+```{r}
+cars
+```
+
+Let;s plot this with "base" R:
+
+```{r}
+plot(cars)
+```
+
+Plot of `mpg` vs. `displacement`
+
+```{r}
+plot(mtcars$mpg, mtcars$disp)
+```
+
+
+## GGPLOT
+
+The main function in the GGPLOT2 package is `ggplot`. **GGPLOT2 needs to be installed first.** Packages can be installed with the function
+`install.packages()`
+
+> **Note** Do not install packages in individual files, install them in the global R console
+
+Must call packages with a `library()` call in order to use their functions
+
+```{r}
+#install.packages("ggplot2")
+library(ggplot2)
+ggplot(cars) + aes(x=speed, y=dist) + geom_point()
+```
+
+Every ggplot needs at least 3 things: 
+
+- The **data** (given with `ggplot(cars)`)
+- The **aesthetic** mapping (given with `aes()`)
+- The **geometry** (given with `geom_...`)
+
+> For simple canned graphs "base" R is nearly always faster
+
+### Adding more layers
+
+```{r}
+ggplot(cars) + 
+  aes(x=speed, y=dist) + 
+  geom_point() + 
+  geom_smooth(method="lm", se=FALSE) + 
+  labs(x="Speed (mph)", y="Stopping Distance (ft)", title="Speed and Stopping Distance of Cars", subtitle="") + 
+  theme_bw()
+```
+
+
+
+## Plotting more relevant gene data
+
+Loading in the dataset
+
+```{r}
+url <- "https://bioboot.github.io/bimm143_S20/class-material/up_down_expression.txt"
+genes <- read.delim(url)
+```
+
+Interrogating the shape of the data
+
+```{r}
+nrow(genes)
+ncol(genes)
+table(genes$State == "up")
+round(table(genes$State)/nrow(genes) * 100, 2)
+```
+
+
+There are `r nrow(genes)` genes in this dataset
+
+There are `r sum(genes$State == "up")` upregulated genes in this dataset
+
+Plotting the data in the genes dataframe
+
+```{r}
+library(ggrepel)
+p <- ggplot(genes) + aes(Condition1, Condition2, col=State) + geom_point()
+p + scale_color_manual(values=c("blue", "gray", "red")) + 
+  labs(x="Control (no drug)", y="Drug Treatment", title="Gene Expression Changes Upon Drug Treatment")
+```
+
+
+## Gap Minder Dataset Plotting
+
+Importing the data
+
+```{r}
+url <- "https://raw.githubusercontent.com/jennybc/gapminder/master/inst/extdata/gapminder.tsv"
+
+gapminder <- read.delim(url)
+
+#install.packages("dplyr")
+```
+
+
+
+```{r}
+# install.packages("dplyr")  ## un-comment to install if needed
+library(dplyr)
+
+ggplot
+
+gapminder_2007 <- gapminder %>% filter(year==2007)
+
+ggplot(gapminder_2007) + 
+  aes(x=gdpPercap, y=lifeExp, color=continent) + 
+  geom_point(alpha=0.5) + 
+  facet_wrap(~continent) + 
+  theme_bw()
+```
+
+
+The Patchwork package can be useful for assembling multi-panel figures
