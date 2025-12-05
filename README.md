@@ -2,7 +2,6 @@
 Class work for the bioinformatics class [BGGN 213 at UC San Diego](https://bioboot.github.io/bggn213_F25/)
 
 ## Class Content
-- Class 04: [R Fundamentals]()
 - Class 05: [Data Exploration and Visualization in R](class5/class05.md)
 - Class 06: [Writing R Functions]()
 - Class 07: [Machine Learning for Bioinformatics]()
