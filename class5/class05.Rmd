@@ -1,9 +1,15 @@
 ---
 title: "Class 05: Data Visualization with GGPLOT"
-author: "Ethan Ashley (PID: A15939817)"
-format: gfm
+author: "Ethan"
+date: "2025-12-05"
+#editor_options:
+  #markdown:
+    #mode: gfm
+output: 
+  github_document:
+    toc: true
+    toc_depth: 2
 ---
-
 Today we are playing with plotting and graphics in R.
 
 There are lots of ways to make cool figures in R. 
