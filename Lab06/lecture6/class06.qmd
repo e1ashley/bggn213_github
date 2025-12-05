@@ -1,0 +1,11 @@
+---
+title: "Class06: Functions Lab"
+author: "Ethan Ashley (PID: A15939817)"
+format: pdf
+---
+
+##Q1 Write a function grade() to determine an overall grade from a vector of student homework assignment scores dropping the lowest single score. If a student misses a homework (i.e. has an NA value) this can  be used as a score to be potentially dropped. Your final function should be adquately explained with code comments and be able to work on an example class gradebook such as this one in CSV format: “https://tinyurl.com/gradeinput” [3pts]
+
+```{r}
+
+```
