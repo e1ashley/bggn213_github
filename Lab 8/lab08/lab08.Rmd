@@ -2,8 +2,10 @@
 title: "Class 08: Breast Cancer Analysis Project"
 author: 'Ethan Ashley (PID: A15939817)'
 date: "2025-10-24"
-output: pdf_document
-toc: true
+output: 
+  github_document:
+    toc: true
+    toc_depth: 2
 ---
 
 # Background

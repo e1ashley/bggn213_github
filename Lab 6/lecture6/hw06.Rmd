@@ -2,8 +2,10 @@
 title: "HW06"
 author: 'Ethan Ashley (PID: A15939817)'
 date: "2025-10-17"
-output: pdf_document
-toc: true
+output: 
+  github_document:
+    toc: true
+    toc_depth: 2
 ---
 
 # Generalize the following protein analysis code to work for any protein sequence

@@ -2,8 +2,10 @@
 title: "lab09"
 author: 'Ethan Ashley (PID: A15939817)'
 date: "2025-10-29"
-output: pdf_document
-toc: true
+output: 
+  github_document:
+    toc: true
+    toc_depth: 2
 ---
 
 # Introduction to PDB

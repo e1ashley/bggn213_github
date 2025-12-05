@@ -2,9 +2,10 @@
 title: 'Class06: Functions Lab'
 author: 'Ethan Ashley (PID: A15939817)'
 date: "2025-10-17"
-output:
-  pdf_document: default
-#toc: TRUE
+output: 
+  github_document:
+    toc: true
+    toc_depth: 2
 ---
 
 # Introduction

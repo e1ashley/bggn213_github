@@ -3,8 +3,9 @@ title: "lab10: Halloween Mini Project"
 author: 'Ethan Ashley (PID: A15939817)'
 date: "2025-10-31"
 output: 
-  pdf_document
-toc: true
+  github_document:
+    toc: true
+    toc_depth: 2
 ---
 
 # Importing the 538 Candy Popularity Dataset
